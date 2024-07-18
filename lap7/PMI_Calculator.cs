@@ -8,7 +8,7 @@ namespace lap7
 {
     public class BMICalculator
     {
-        public List<Result> Results = new List<Result>();
+        Stack<Result> stack = new Stack<Result>();
 
         public Result Calculate()
         {
@@ -37,13 +37,13 @@ namespace lap7
                 Category = category
             };
 
-            Results.Add(result);
+            stack.Push(result);
             Console.WriteLine($"PMI = {bmi} ");
             return result;
         }
         public void VeiwPrevice()
         {
-            foreach (Result result in Results)
+            foreach (Result result in stack)
             {
                 Console.WriteLine(result);
             }
